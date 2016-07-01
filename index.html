@@ -1,7 +1,134 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8" />
+	<title>caozhilin personal homepage</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="czl homepage" />
+    <meta name="keywords" content="Web Font-End technology homepage" />
+    <meta name="author" content="caozhilin" />	
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/timeline.css"/>
+    <script type="text/javascript" src="js/index.js"></script> 
 </head>
 <body>
-Hello everyone, I'm working!:)`
+	<div class ="container">
+		<div class= "top" id="top">
+			<div class = "top-left">
+				<strong>web font-end technology class</strong>
+				 :)
+			</div>
+			<div class = "top-right">
+				hello,summer~
+			</div>
+		</div>
+		<header>
+				<h1>Cao Zhilin's Homepage 
+				<span>Welcome, my friend!</span></h1>	
+		</header>
+	</div>
+	<div id="abstract">
+		<h2>Abstract</h2>
+		<div class="ab_box">
+			<div class="left_column">
+			<h3>Recent Diaries</h3>
+			<p onclick="get_diary1()">前端素材推荐</p>
+			<p onclick="get_diary2()">xuexiganshou</p>
+			</div>
+			<div class="right_column">
+			<h3>Homework Links</h3>
+			<p><a href="">homework1 link</a></p>
+			<p><a href="">homework2 link</a></p>
+			</div>
+		</div>
+	</div>
+	<div id="self_intro">
+		<h2>Self Introduction</h2>
+		<section class="self_intro_section">
+			<article class="self_intro_side self_intro_side_left">
+				<h3>Personal Profile</h3>
+				<p>
+					曹智林（Cao Zhilin)</br>
+					清华大学软件学院</br>
+					zhilin.cao@foxmail.com / caozhilin14@gmail.com</br>
+					github:CaoZhilin 微信:czl214522743</br>
+					微博:lesley_char QQ:214522743</br>
+					非常喜欢运动，也非常喜欢吃食物</br>
+					也非常喜欢变瘦:)</br>
+					一起探索编程的奥义吧>。<</br>
+				</p>
+				<p>
+					Lesley Cao</br>
+					School of Software, Tsinghua University</br>
+					</br>
+				</p>
+			</article>
+			<figure class="self_intro_side self_intro_side_right">
+				<img src="img/1.png" alt="img01">
+			</figure>
+		</section>
+	</div>
+
+	<div id="homework">
+		<h2>Homework Links(to be updated...)</h2>
+		<ul>
+			<li><a href="">homework1 link</a></li>
+			<li><a href="">homework2 link</a></li>
+			<li><a href="">homework3 link</a></li>
+		</ul>
+	</div>
+	<div id="diary">
+		<h2>Blog</h2>
+		<ul class="timeline">
+			<li id="diary1">
+				<time class="time" datetime="2016-06-30 18:30"><span>4/10/13</span> <span>18:30</span>
+				</time>
+				<div class="icon icon-phone">
+				</div>
+				<div class="label">
+					<h3>Thonghts about Web Font-End Technology Class </br>
+                    Web 前端课程感想 &nbsp&nbsp<button class="btn"><a href="diary1.html">detail >></a></button></h3>
+                    <p>
+                    在大一的时候曾经上过计算机系的网页设计的课程，但是这门通选课的内容非常的简单和基础，更多只是涉及了静态页面的html、css的内容和一些flash的制作。并且课程教学使用了dreamweaver这种现在已经较少使用的软件。在前端的内容中我们感兴趣的除了好看的样式之外更多的是JavaScript所实现的交互和动态效果。</p>
+                    <p>...</p>
+				</div>
+			</li>
+			<li id="diary2">
+				<time class="time" datetime="2016-07-01T12:04"><span>01/07/16</span> <span>12:04</span></time>
+				<div class="icon icon-screen"></div>
+				<div class="label">
+					<h3>Recommended Resource  for Web Font-End</br>
+                    Web前端资源推荐&nbsp&nbsp<button class="btn"><a href="diary2.html">detail >></a></button></h3>
+                    <p>
+                    在大一下和大二上的时候曾经在校团委的成才中心写过一段时间的网页，在组织里积累了一些网页前端设计的素材和资源，非常的实用，分享给大家。</p>
+                    <p>...</p>
+				</div>
+			</li>	
+		</ul>
+	</div>
+	<div id="music">
+		<h2>Music</h2>
+		<div>
+			<embed id="player" SRC="music/纪念品-林宥嘉.mp3" loop=false width=400 height=80 autostart="false" flashvars="autoplay=false&play=false" menu="false"></embed>
+		</div>
+	</div>
+	<div id="bottomNav">
+		<div id="buttom_icon" onclick="get_top()">
+			<img src="img/top.png"> to top
+		</div>
+		<div id="self_intro_button" onclick="get_self_intro()">
+			self intro
+		</div>
+		<div id="homework_button" onclick="get_homework()">
+		homework
+		</div>
+		<div id="diary_button" onclick="get_diary()">
+		diary
+		</div>
+		<div id="music_button" onclick="get_music()">
+		music
+		</div>
+	</div>  
 </body>
 </html>
