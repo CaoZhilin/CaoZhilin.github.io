@@ -1,0 +1,186 @@
+<head>
+<style type="text/css">
+#container{
+text-align: left;
+background-color: #faf7ec;
+width: 500px;
+margin: 20px auto 0 auto;
+padding: 0;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+#block0, #block1, #block2, #block3, #block4, #block5 {
+border-top: solid 1px #785a3c;
+margin: 0;
+padding: 10px;
+}
+.active {
+background-color: #fff;
+}
+.visited {
+background-color: #ede7da;
+}
+#block0, #block0.active, #block0.visited {
+text-align: center;
+background-color: #a0dcf8;
+border-top: none;
+border-bottom: solid 4px #785a3c;
+}
+</style>
+<script>
+var ScrollWin = {
+w3c : document.getElementById,
+iex : document.all,
+scrollLoop : false,
+scrollInterval : null, // setInterval id
+currentBlock : null,   // object reference
+getWindowHeight : function(){
+if(this.iex) return (document.documentElement.clientHeight) ?
+document.documentElement.clientHeight : document.body.clientHeight;
+else return window.innerHeight;
+},
+getScrollLeft : function(){
+if(this.iex) return (document.documentElement.scrollLeft) ?
+document.documentElement.scrollLeft : document.body.scrollLeft;
+else return window.pageXOffset;
+},
+getScrollTop : function(){
+if(this.iex) return (document.documentElement.scrollTop) ?
+document.documentElement.scrollTop : document.body.scrollTop;
+else return window.pageYOffset;
+},
+getElementYpos : function(el){
+var y = 0;
+while(el.offsetParent){
+y += el.offsetTop
+el = el.offsetParent;
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+return y;
+},
+scroll : function(num){
+if(!this.w3c){
+location.href = "#"+this.anchorName+num;
+return;
+}
+if(this.scrollLoop){
+clearInterval(this.scrollInterval);
+this.scrollLoop = false;
+this.scrollInterval = null;
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+if(this.currentBlock != null) this.currentBlock.className = this.offClassName;
+this.currentBlock = document.getElementById(this.blockName+num);
+this.currentBlock.className = this.onClassName;
+var doc = document.getElementById(this.containerName);
+var documentHeight = this.getElementYpos(doc) + doc.offsetHeight;
+var windowHeight = this.getWindowHeight();
+var ypos = this.getElementYpos(this.currentBlock);
+if(ypos > documentHeight - windowHeight) ypos = documentHeight - windowHeight;
+this.scrollTo(0,ypos);
+},
+scrollTo : function(x,y){
+if(this.scrollLoop){
+var left = this.getScrollLeft();
+var top = this.getScrollTop();
+if(Math.abs(left-x) <= 1 && Math.abs(top-y) <= 1){
+window.scrollTo(x,y);
+clearInterval(this.scrollInterval);
+this.scrollLoop = false;
+this.scrollInterval = null;
+}else{
+window.scrollTo(left+(x-left)/10, top+(y-top)/10);
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+}else{
+this.scrollInterval = setInterval("ScrollWin.scrollTo("+x+","+y+")",20);
+this.scrollLoop = true;
+}
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+};
+ScrollWin.containerName = "container";
+ScrollWin.anchorName    = "anchor";
+ScrollWin.blockName     = "block";
+ScrollWin.onClassName   = "active";
+ScrollWin.offClassName  = "visited";
+</script>
+</head>
+<body>
+<a href="http://www.zzjs.net/">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<script type="text/javascript" src="http://www.zzjs.net/ad/tc.js"></script>
+<div align="center">
+<div id="container">
+<a name="anchor0"></a>
+<div id="block0">
+<a href="javascript:ScrollWin.scroll('1')">链接 1</a> |
+<a href="javascript:ScrollWin.scroll('2')">链接 2</a> |
+<a href="javascript:ScrollWin.scroll('3')">链接 3</a> |
+<a href="javascript:ScrollWin.scroll('4')">链接 4</a> |
+<a href="javascript:ScrollWin.scroll('5')">链接 5</a>
+</div>
+<a name="anchor1"></a>
+<div id="block1">
+<h3><a href="#" onclick="javascript:ScrollWin.scroll('0'); return false;">顶部</a>
+链接 1</h3>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+</div>
+<a name="anchor2"></a>
+<div id="block2">
+<h3><a href="#" onclick="javascript:ScrollWin.scroll('0'); return false;">顶部</a>
+链接 2</h3>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+</div>
+<a name="anchor3"></a>
+<div id="block3">
+<h3><a href="#" onclick="javascript:ScrollWin.scroll('0'); return false;">顶部</a>
+链接 3</h3>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+</div>
+<a name="anchor4"></a>
+<div id="block4">
+<h3><a href="#" onclick="javascript:ScrollWin.scroll('0'); return false;">顶部</a>
+链接 4</h3>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+</div>
+<a name="anchor5"></a>
+<div id="block5">
+<h3><a href="#" onclick="javascript:ScrollWin.scroll('0'); return false;">顶部</a>
+链接 5</h3>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+<p>内容</p>
+</div>
+</div>
+</div>
+</body>
