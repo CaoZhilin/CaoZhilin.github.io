@@ -237,22 +237,20 @@ overflow:visible;
  	font-size: 1.2em;
  	padding-top: 20px;
  	line-height: 0.6;
+ 	border:2px solid;
 }
 .left_column{
 	width: 48%;
 	display: inline-block;
 	float: left;
 	text-align: center;
-	border:2px solid;
 }
 .right_column{
 	width: 48%;
 	display: inline-block;
 	float: left;
 	text-align: center;
-	border-top:2px solid;
-	border-bottom:2px solid;
-	border-right:2px solid;
+	border-left:2px solid;
 }
 .self_intro_section {
 
@@ -320,7 +318,7 @@ overflow:visible;
 	float: left;
 	width: auto;
 	height: 500px;
-	margin-left: 100px;
+	margin-left: 10%;
 }
 
 .self_intro_side_left img {
