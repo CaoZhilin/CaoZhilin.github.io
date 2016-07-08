@@ -12,6 +12,7 @@ $.get('https://wall.cgcgbcbc.com/api/messages?num=4',function(data){
 		var len = data[i].content.length;
 		if (len >= 20) {
 			var msgCon = document.createElement('marquee');
+			msgCon.setAttribute('scrollamount','20');
 			msgCon.innerText = data[i].content;
 		}
 		else{
@@ -51,6 +52,7 @@ msgListener.on('new message',function(data){
 	var len = data.content.length;
 	if (len >= 20) {
 		var msgCon = document.createElement('marquee');
+		msgCon.setAttribute('scrollamount','20');
 		msgCon.innerText = data.content;
 	}
 	else{
@@ -127,6 +129,7 @@ msgListener.on('admin',function (data) {
 	var len = data.content.length;
 	if (len >= 20) {
 		var adminCon = document.createElement('marquee');
+		adminCon.setAttribute('scrollamount',"20");
 		adminCon.innerText = data.content;
 	}
 	else{
